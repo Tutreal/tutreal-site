@@ -13,3 +13,13 @@ document.querySelectorAll('.card, .gallery figure, .steps li, .strip-item, .hero
   el.classList.add('reveal');
   observer.observe(el);
 });
+
+window.dataLayer = window.dataLayer || [];
+document.addEventListener('click', e => {
+  const link = e.target.closest('a[href*="wa.me"]');
+  if (!link) return;
+  window.dataLayer.push({
+    event: 'clique_whatsapp',
+    origem_clique: link.dataset.waOrigem || 'nao-identificado'
+  });
+});
