@@ -16,10 +16,10 @@ document.querySelectorAll('.card, .gallery figure, .steps li, .strip-item, .hero
 
 window.dataLayer = window.dataLayer || [];
 document.addEventListener('click', e => {
-  const link = e.target.closest('a[href*="wa.me"]');
+  const link = e.target.closest('a[href*="wa.me"], a[href^="mailto:"]');
   if (!link) return;
   window.dataLayer.push({
-    event: 'clique_whatsapp',
-    origem_clique: link.dataset.waOrigem || 'nao-identificado'
+    event: link.href.startsWith('mailto:') ? 'clique_email' : 'clique_whatsapp',
+    origem_clique: link.dataset.origem || 'nao-identificado'
   });
 });
