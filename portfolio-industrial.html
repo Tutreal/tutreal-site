@@ -64,13 +64,12 @@
     .case-item .n { font-family: "IBM Plex Mono", monospace; font-size: .78rem; color: var(--accent); font-weight: 600; }
     .case-item[aria-selected="true"] { color: var(--text); padding-left: .8rem; }
     .case-item[aria-selected="true"]::before { content: ""; position: absolute; left: 0; top: 16%; bottom: 16%; width: 3px; border-radius: 3px; background: var(--accent); }
-    .case-panel { position: relative; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+    .case-panel { position: relative; display: flex; min-height: clamp(470px, 56vw, 540px); background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
     .case-panel .corner { position: absolute; width: 16px; height: 16px; border: 2px solid var(--accent); opacity: .55; z-index: 2; }
     .case-panel .corner.tl { top: 12px; left: 12px; border-right: 0; border-bottom: 0; }
     .case-panel .corner.br { bottom: 12px; right: 12px; border-left: 0; border-top: 0; }
-    .case-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 2px; background: #eef1e8; }
-    .case-gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
-    .case-gallery.single img { aspect-ratio: 16/10; }
+    .case-gallery { display: grid; gap: 2px; grid-auto-rows: 1fr; height: clamp(210px, 30vw, 290px); background: #eef1e8; flex: none; }
+    .case-gallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     /* Fundo facetado (motivo do PDF, em verde) */
     .pf-facets-host { position: relative; overflow: hidden; }
@@ -79,12 +78,12 @@
     .facets svg { width: 100%; height: auto; display: block; }
     .facets-tr { top: -24px; right: -30px; }
     .facets-bl { bottom: -24px; left: -30px; transform: scaleX(-1); }
-    .case-body { padding: 1.5rem; }
+    .case-body { padding: 1.5rem; flex: 1; min-height: 300px; }
     .case-step { font-family: "IBM Plex Mono", monospace; font-size: .68rem; color: var(--muted); letter-spacing: .12em; }
     .case-title { font-family: var(--font-head); font-weight: 800; font-size: 1.35rem; margin: .3rem 0 .4rem; }
     .case-tag { display: inline-block; font-family: var(--font-head); font-weight: 700; font-size: .72rem; color: var(--accent-dark); background: rgba(119,156,4,.12); border-radius: 999px; padding: .3em .8em; margin-bottom: .7rem; }
     .case-body p { color: var(--muted); margin: 0; }
-    .case-fade { animation: pffade .45s ease; }
+    .case-fade { animation: pffade .45s ease; display: flex; flex-direction: column; flex: 1; min-width: 0; }
     @keyframes pffade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
     /* Reveal */
