@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NNJJ9MBG');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Industrial — Tutreal | Cases de Impressão 3D</title>
+  <meta name="description" content="Portfólio digital da Tutreal: cases de sucesso em impressão 3D industrial, materiais de engenharia e soluções sob medida para a indústria.">
+  <meta property="og:title" content="Portfólio Industrial — Tutreal">
+  <meta property="og:description" content="Cases de sucesso em impressão 3D industrial, materiais e soluções sob medida.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tutreal3d.com.br/portfolio-industrial.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <style>
+    .pf-mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+
+    /* Topbar simples da página de portfólio */
+    .pf-back { font-family: var(--font-head); font-weight: 600; font-size: 0.9rem; color: var(--muted); margin-left: auto; display: inline-flex; align-items: center; gap: .4em; transition: color .2s; }
+    .pf-back:hover { color: var(--accent); }
+
+    /* Hero escuro com partículas */
+    .pf-hero { position: relative; overflow: hidden; color: #eef4e3; text-align: center;
+      background: radial-gradient(130% 100% at 80% -10%, rgba(140,198,63,.22), transparent 55%), linear-gradient(170deg, #141c0c, #0c1308); }
+    .pf-hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+    .pf-hero .container { position: relative; z-index: 1; padding-block: clamp(3rem, 7vw, 4.6rem); }
+    .pf-hero .eyebrow { color: var(--accent-strong); }
+    .pf-hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); }
+    .pf-hero p { color: rgba(238,244,227,.9); max-width: 48ch; margin: 1rem auto 0; font-size: 1.1rem; }
+    .pf-hero .pf-mono { color: var(--accent-strong); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; margin-top: 1.4rem; display: inline-block; }
+
+    /* Quem somos */
+    .pf-about { display: grid; grid-template-columns: 1.1fr .9fr; gap: 2.6rem; align-items: start; }
+    .pf-about p { color: var(--muted); margin-bottom: 1em; font-size: 1.04rem; }
+    .pf-aside { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.6rem; }
+    .pf-aside h3 { font-size: 1rem; margin-bottom: .8rem; }
+    .pf-aside + .pf-aside { margin-top: 1.2rem; }
+    .pf-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .pf-chip { font-family: var(--font-head); font-weight: 600; font-size: .8rem; color: var(--accent-dark); background: rgba(119,156,4,.1); border-radius: 999px; padding: .4em .85em; }
+    .pf-seg { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin-top: .4rem; color: var(--muted); font-size: .92rem; }
+    .pf-seg b { color: var(--text); font-family: var(--font-head); }
+
+    /* Materiais */
+    .mat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2rem; }
+    .mat-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.5rem; border-top: 4px solid var(--accent); }
+    .mat-card .tag { font-family: var(--font-head); font-weight: 800; font-size: 1.25rem; color: var(--text); }
+    .mat-card .tag span { color: var(--accent); }
+    .mat-card p { color: var(--muted); font-size: .94rem; margin-top: .5rem; }
+
+    /* Cases — painel interativo */
+    .cases { display: grid; grid-template-columns: .82fr 1.18fr; gap: 2rem; margin-top: 2rem; align-items: start; }
+    .cases-list { display: flex; flex-direction: column; }
+    .case-item { display: grid; grid-template-columns: auto 1fr; gap: .9rem; align-items: baseline; text-align: left; background: none; border: 0; border-top: 1px solid var(--line); padding: 1rem .3rem; cursor: pointer; color: var(--muted); font-family: var(--font-head); font-weight: 700; font-size: 1.04rem; transition: color .2s, padding .2s; position: relative; width: 100%; }
+    .case-item:last-child { border-bottom: 1px solid var(--line); }
+    .case-item .n { font-family: "IBM Plex Mono", monospace; font-size: .78rem; color: var(--accent); font-weight: 600; }
+    .case-item[aria-selected="true"] { color: var(--text); padding-left: .8rem; }
+    .case-item[aria-selected="true"]::before { content: ""; position: absolute; left: 0; top: 16%; bottom: 16%; width: 3px; border-radius: 3px; background: var(--accent); }
+    .case-panel { position: relative; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+    .case-panel .corner { position: absolute; width: 16px; height: 16px; border: 2px solid var(--accent); opacity: .55; z-index: 2; }
+    .case-panel .corner.tl { top: 12px; left: 12px; border-right: 0; border-bottom: 0; }
+    .case-panel .corner.br { bottom: 12px; right: 12px; border-left: 0; border-top: 0; }
+    .case-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 2px; background: #eef1e8; }
+    .case-gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .case-gallery.single img { aspect-ratio: 16/10; }
+
+    /* Fundo facetado (motivo do PDF, em verde) */
+    .pf-facets-host { position: relative; overflow: hidden; }
+    .pf-facets-host .container { position: relative; z-index: 1; }
+    .facets { position: absolute; width: clamp(180px, 26vw, 320px); z-index: 0; pointer-events: none; opacity: .7; }
+    .facets svg { width: 100%; height: auto; display: block; }
+    .facets-tr { top: -24px; right: -30px; }
+    .facets-bl { bottom: -24px; left: -30px; transform: scaleX(-1); }
+    .case-body { padding: 1.5rem; }
+    .case-step { font-family: "IBM Plex Mono", monospace; font-size: .68rem; color: var(--muted); letter-spacing: .12em; }
+    .case-title { font-family: var(--font-head); font-weight: 800; font-size: 1.35rem; margin: .3rem 0 .4rem; }
+    .case-tag { display: inline-block; font-family: var(--font-head); font-weight: 700; font-size: .72rem; color: var(--accent-dark); background: rgba(119,156,4,.12); border-radius: 999px; padding: .3em .8em; margin-bottom: .7rem; }
+    .case-body p { color: var(--muted); margin: 0; }
+    .case-fade { animation: pffade .45s ease; }
+    @keyframes pffade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+    /* Reveal */
+    .r { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--i,0) * 70ms); }
+    .r.vis { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .r { opacity: 1; transform: none; transition: none; } }
+
+    @media (max-width: 960px) {
+      .pf-about { grid-template-columns: 1fr; gap: 1.6rem; }
+      .mat-grid { grid-template-columns: 1fr 1fr; }
+      .cases { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) { .mat-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNJJ9MBG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="index.html" class="brand" aria-label="Tutreal — início">
+      <img class="brand-logo" src="assets/img/logo-tutreal-topo.jpg" alt="Tutreal — soluções em impressão 3D">
+    </a>
+    <a class="pf-back" href="index.html">← Voltar ao site</a>
+    <a class="btn btn-accent topbar-cta" data-origem="portfolio-digital" href="https://wa.me/5519992577506?text=Ol%C3%A1%2C%20vi%20o%20portf%C3%B3lio%20digital%20da%20Tutreal%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicite seu orçamento</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="pf-hero">
+    <canvas id="pffx"></canvas>
+    <div class="container">
+      <p class="eyebrow">Portfólio</p>
+      <h1>Portfólio Industrial</h1>
+      <p>Soluções em impressão 3D industrial: cases reais, materiais de engenharia e peças sob medida para a indústria.</p>
+      <span class="pf-mono">Tutreal · Soluções em Impressão 3D</span>
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS / VALORES -->
+  <section class="section pf-facets-host" id="quem-somos">
+    <div class="facets facets-tr"><svg viewBox="0 0 220 220" aria-hidden="true"><g fill="rgba(119,156,4,.05)"><polygon points="80,20 150,70 90,110"/><polygon points="90,110 150,70 170,140"/><polygon points="10,60 90,110 40,160"/><polygon points="150,70 210,110 170,140"/></g><g fill="none" stroke="rgba(119,156,4,.22)" stroke-width="1"><path d="M10 60 L80 20 L150 70 L90 110 Z"/><path d="M80 20 L150 70 L140 10"/><path d="M10 60 L90 110 L40 160 Z"/><path d="M90 110 L150 70 L170 140 L110 170 Z"/><path d="M40 160 L110 170 L90 110"/><path d="M150 70 L210 110 L170 140"/><path d="M110 170 L170 140 L160 210"/></g></svg></div>
+    <div class="container">
+      <p class="eyebrow r">Quem somos / Nossos valores</p>
+      <h2 class="r" style="--i:1">Uma empresa especializada em soluções de impressão 3D</h2>
+      <div class="pf-about" style="margin-top:1.6rem">
+        <div class="r" style="--i:2">
+          <p>Acreditamos que o sucesso é fruto da dedicação, do compromisso e da vontade de fazer acontecer. Prezamos pela qualidade em cada etapa do processo, com um atendimento diferenciado e relações sólidas e transparentes, atendendo demandas industriais com alta precisão.</p>
+          <p>Nosso objetivo não é apenas atender às expectativas com serviços personalizados, mas superá-las — criando parcerias de confiança e de longo prazo.</p>
+          <p><strong>Nosso diferencial:</strong> trabalhamos com material de alta qualidade para a fabricação de peças sob medida, garantindo agilidade na entrega, redução de custos para os parceiros e durabilidade das impressões.</p>
+        </div>
+        <div>
+          <div class="pf-aside r" style="--i:3">
+            <h3>Serviços oferecidos</h3>
+            <div class="pf-chips">
+              <span class="pf-chip">Modelagem e projeto em CAD</span>
+              <span class="pf-chip">Peças personalizadas</span>
+              <span class="pf-chip">Peças de reposição</span>
+              <span class="pf-chip">Ferramentais e moldes</span>
+              <span class="pf-chip">Protótipos</span>
+              <span class="pf-chip">Modelos arquitetônicos</span>
+              <span class="pf-chip">Brindes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIAIS -->
+  <section class="section section-alt" id="materiais">
+    <div class="container">
+      <p class="eyebrow r">Materiais de impressão</p>
+      <h2 class="r" style="--i:1">Filamentos de engenharia para cada aplicação</h2>
+      <p class="section-note r" style="--i:2">Utilizamos diferentes materiais para atender às mais diversas necessidades industriais, garantindo qualidade e desempenho adequado em cada peça.</p>
+      <div class="mat-grid">
+        <div class="mat-card r" style="--i:0"><div class="tag"><span>ABS</span></div><p>Altamente resistente, ideal para peças que exigem durabilidade mecânica e resistência térmica. Suporta temperaturas elevadas e boa resistência a impactos.</p></div>
+        <div class="mat-card r" style="--i:1"><div class="tag"><span>PLA</span></div><p>Biodegradável, fácil de imprimir e com excelente acabamento superficial. Para peças que demandam precisão dimensional e estética.</p></div>
+        <div class="mat-card r" style="--i:2"><div class="tag"><span>PETG</span></div><p>Combina a resistência mecânica do ABS com a facilidade do PLA. Alta resistência química, flexibilidade e boa transparência.</p></div>
+        <div class="mat-card r" style="--i:3"><div class="tag"><span>Nylon</span> (PA6)</div><p>Alta resistência mecânica e tenacidade, com excelente resistência ao desgaste e à abrasão. Baixo atrito — ideal para engrenagens e buchas.</p></div>
+        <div class="mat-card r" style="--i:4"><div class="tag"><span>PC</span> Policarbonato</div><p>Um dos mais resistentes: elevada resistência ao impacto e estabilidade térmica. Suporta altas temperaturas sem deformar.</p></div>
+        <div class="mat-card r" style="--i:5"><div class="tag"><span>+ outros</span></div><p>Estamos aptos a trabalhar com outros filamentos conforme a necessidade do projeto, sempre buscando a melhor solução para cada aplicação.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASES -->
+  <section class="section pf-facets-host" id="cases">
+    <div class="facets facets-bl"><svg viewBox="0 0 220 220" aria-hidden="true"><g fill="rgba(119,156,4,.05)"><polygon points="80,20 150,70 90,110"/><polygon points="90,110 150,70 170,140"/><polygon points="10,60 90,110 40,160"/><polygon points="150,70 210,110 170,140"/></g><g fill="none" stroke="rgba(119,156,4,.22)" stroke-width="1"><path d="M10 60 L80 20 L150 70 L90 110 Z"/><path d="M80 20 L150 70 L140 10"/><path d="M10 60 L90 110 L40 160 Z"/><path d="M90 110 L150 70 L170 140 L110 170 Z"/><path d="M40 160 L110 170 L90 110"/><path d="M150 70 L210 110 L170 140"/><path d="M110 170 L170 140 L160 210"/></g></svg></div>
+    <div class="container">
+      <p class="eyebrow r">Cases de sucesso</p>
+      <h2 class="r" style="--i:1">Projetos que resolvemos</h2>
+      <p class="section-note r" style="--i:2">Selecione um projeto e veja o desafio e a solução. Diversos trabalhos permanecem confidenciais por acordo com nossos parceiros.</p>
+      <div class="cases r" style="--i:3">
+        <div class="cases-list" id="caseList" role="tablist"></div>
+        <div class="case-panel" id="casePanel"><span class="corner tl"></span><span class="corner br"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section section-alt section-contact" id="contato">
+    <div class="container">
+      <p class="eyebrow r">Contato</p>
+      <h2 class="r" style="--i:1">Entre em contato e solicite seu orçamento</h2>
+      <p class="section-note r" style="--i:2">Fale com a nossa equipe e descubra como a impressão 3D pode otimizar seus processos.</p>
+      <div class="contact-grid r" style="--i:3">
+        <a class="contact-card card" data-origem="portfolio-digital" href="https://wa.me/5519992577506?text=Ol%C3%A1%2C%20vi%20o%20portf%C3%B3lio%20digital%20da%20Tutreal%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+          <span class="contact-label">WhatsApp — Renan Bocalini</span>
+          <strong>(19) 99257-7506</strong>
+        </a>
+        <a class="contact-card card" data-origem="portfolio-digital" href="mailto:tutreal3D@outlook.com">
+          <span class="contact-label">E-mail</span>
+          <strong>tutreal3D@outlook.com</strong>
+        </a>
+        <a class="contact-card card" href="index.html">
+          <span class="contact-label">Site</span>
+          <strong>Voltar ao site</strong>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Tutreal Soluções em Impressão 3D — Todos os direitos reservados.</p>
+    <p>Portfólio Industrial · Impressão 3D</p>
+  </div>
+</footer>
+
+<a class="wa-float" data-origem="portfolio-flutuante" href="https://wa.me/5519992577506?text=Ol%C3%A1%2C%20vi%20o%20portf%C3%B3lio%20digital%20da%20Tutreal%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.6.8 5 2.3 7L4 29l7.3-2.2c1.5.8 3.1 1.2 4.7 1.2 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm5.9 16.9c-.3.8-1.5 1.5-2.4 1.6-.6.1-1.4.2-4.1-.9-3.4-1.4-5.6-4.9-5.8-5.1-.2-.2-1.4-1.9-1.4-3.6s.9-2.5 1.2-2.9c.3-.3.7-.4.9-.4h.7c.2 0 .5-.1.8.6l1.1 2.7c.1.2.2.4 0 .7l-.5.7-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.4 2.8 1.8 3.2 2 .4.2.6.2.9-.1l1.3-1.5c.3-.4.6-.3.9-.2l2.8 1.3c.4.2.7.3.8.5.1.2.1.9-.2 1.7z" fill="currentColor"/></svg>
+</a>
+
+<script>
+(function () {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Reveal */
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); } }); }, { threshold: .14 });
+  document.querySelectorAll('.r').forEach(function (el) { io.observe(el); });
+
+  /* Rastreamento WhatsApp/e-mail (mesmo evento do site) */
+  window.dataLayer = window.dataLayer || [];
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href*="wa.me"], a[href^="mailto:"]');
+    if (!link) return;
+    window.dataLayer.push({ event: link.href.indexOf('mailto:') === 0 ? 'clique_email' : 'clique_whatsapp', origem_clique: link.dataset.origem || 'portfolio-digital' });
+  });
+
+  /* Cases — painel */
+  var CASES = [
+    { t: 'Suporte Coletor de Graxa', m: 'PETG', imgs: ['assets/img/case-coletor.jpg'], d: 'Geometria complexa exigindo alta precisão. Superamos as particularidades do PETG — adesão e controle de retração — com ajustes precisos, alcançando um excelente resultado.' },
+    { t: 'Isolante Elétrico', m: 'PLA', imgs: ['assets/img/case-isolante.jpg'], d: 'Isolante elétrico submetido e aprovado em teste de 5.000 volts, comprovando a eficácia do material para aplicações elétricas específicas, com precisão e confiabilidade.' },
+    { t: 'Suportes de Filtros p/ Unidade Hidráulica', m: 'PETG / Nylon', imgs: ['assets/img/case-filtro-1.jpg', 'assets/img/case-filtro-2.jpg'], d: 'Suportes de filtros de sílica para unidades hidráulicas em diversos perfis, com roscas impressas com perfeição em medidas como 1" e 3/8", atendendo às exigências técnicas.' },
+    { t: 'Suporte Sensor Cilindro Pneumático', m: 'PLA', imgs: ['assets/img/case-sensor.jpg'], d: 'Geometria complexa e pequeno dimensionamento. Garantimos encaixe preciso e suave para o sensor, sem risco de quebra, com a resistência necessária para a aplicação.' },
+    { t: 'Molde p/ Produção de Materiais Especiais', m: 'Molde técnico', imgs: ['assets/img/case-molde.jpg'], d: 'Molde para produção de peças cerâmicas, com alta precisão e durabilidade. Acabamento que facilita o desmolde e mantém a fidelidade dos detalhes, para reprodução eficiente e consistente.' },
+    { t: 'Mais de 15 mil peças em PETG', m: 'PETG · Indústria metalúrgica', imgs: ['assets/img/peca-industrial-13.jpg', 'assets/img/peca-industrial-14.jpg', 'assets/img/peca-industrial-15.jpg'], d: 'Produção em escala: mais de 15 mil peças de diversos modelos em PETG para aplicação na indústria metalúrgica, mantendo a precisão e a repetibilidade exigidas em grandes volumes.' },
+    { t: 'Mais de 300 Modelos em ABS', m: 'ABS', imgs: ['assets/img/case-abs-1.jpg', 'assets/img/case-abs-2.jpg', 'assets/img/case-abs-3.jpg', 'assets/img/case-abs-4.jpg', 'assets/img/case-abs-5.jpg', 'assets/img/case-abs-6.jpg'], d: 'Mais de 300 modelos impressos em ABS, produzidos em impressoras 100% fechadas para garantir a estabilidade do material. O desafio foi assegurar a precisão dimensional para que as peças se encaixassem e funcionassem perfeitamente em conjunto.' },
+    { t: 'Tecla de Bloqueio de Emergência', m: 'PLA', imgs: ['assets/img/case-tecla.jpg'], d: 'Peça em PLA com a resistência mecânica adequada para bom desempenho, com ampla variedade de cores para atender às necessidades específicas da aplicação.' }
+  ];
+  var cl = document.getElementById('caseList'), cp = document.getElementById('casePanel'), act = 0;
+  function render() {
+    var s = CASES[act];
+    var cols = Math.min(3, s.imgs.length);
+    var gal = '<div class="case-gallery' + (s.imgs.length === 1 ? ' single' : '') + '" style="grid-template-columns:repeat(' + cols + ',1fr)">' +
+      s.imgs.map(function (src) { return '<img src="' + src + '" alt="' + s.t + '" loading="lazy">'; }).join('') + '</div>';
+    cp.innerHTML = '<span class="corner tl"></span><span class="corner br"></span>' +
+      '<div class="case-fade">' + gal +
+      '<div class="case-body"><div class="case-step">CASE 0' + (act + 1) + ' / 0' + CASES.length + '</div>' +
+      '<div class="case-title">' + s.t + '</div><span class="case-tag">' + s.m + '</span>' +
+      '<p>' + s.d + '</p></div></div>';
+  }
+  function sel(i) { if (i === act) return; act = i; [].forEach.call(cl.children, function (c, j) { c.setAttribute('aria-selected', j === i); }); render(); }
+  CASES.forEach(function (s, i) {
+    var b = document.createElement('button');
+    b.className = 'case-item'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', i === 0);
+    b.innerHTML = '<span class="n">0' + (i + 1) + '</span><span>' + s.t + '</span>';
+    b.addEventListener('click', function () { sel(i); });
+    b.addEventListener('mouseenter', function () { sel(i); });
+    cl.appendChild(b);
+  });
+  render();
+
+  /* Partículas no hero (verde, leve) */
+  var cv = document.getElementById('pffx'), ctx = cv.getContext('2d'), hero = cv.parentElement;
+  var DPR = Math.min(2, devicePixelRatio || 1), W = 0, H = 0, dots = [], run = true;
+  function resize() { var r = hero.getBoundingClientRect(); W = r.width; H = r.height; cv.width = W * DPR; cv.height = H * DPR; ctx.setTransform(DPR, 0, 0, DPR, 0, 0); }
+  resize(); addEventListener('resize', resize);
+  for (var i = 0; i < 60; i++) dots.push({ x: Math.random(), y: Math.random(), s: .5 + Math.random() * 1.7, vx: (Math.random() - .5) * .0004, vy: (Math.random() - .5) * .0004, tw: Math.random() * 6 });
+  function draw(now) {
+    if (!run) return;
+    ctx.clearRect(0, 0, W, H);
+    var t = now * 0.001, pts = [];
+    for (var i = 0; i < dots.length; i++) {
+      var p = dots[i]; if (!reduce) { p.x += p.vx; p.y += p.vy; if (p.x < 0) p.x = 1; if (p.x > 1) p.x = 0; if (p.y < 0) p.y = 1; if (p.y > 1) p.y = 0; }
+      pts.push({ x: p.x * W, y: p.y * H, a: .25 + .3 * (0.5 + 0.5 * Math.sin(t * 2 + p.tw)), s: p.s });
+    }
+    for (var i = 0; i < pts.length; i++) {
+      for (var j = i + 1; j < pts.length; j++) {
+        var dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y, dd = dx * dx + dy * dy;
+        if (dd < 13000) { ctx.strokeStyle = 'rgba(156,198,74,' + (0.10 * (1 - dd / 13000)) + ')'; ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.stroke(); }
+      }
+    }
+    for (var i = 0; i < pts.length; i++) {
+      var p = pts[i]; ctx.beginPath(); ctx.arc(p.x, p.y, p.s, 0, 6.2832);
+      ctx.fillStyle = 'rgba(190,230,87,' + p.a + ')'; ctx.shadowColor = 'rgba(156,198,74,.8)'; ctx.shadowBlur = 8; ctx.fill(); ctx.shadowBlur = 0;
+    }
+    requestAnimationFrame(draw);
+  }
+  if (reduce) { run = true; draw(performance.now()); run = false; } else requestAnimationFrame(draw);
+  var vis = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting && !run && !reduce) { run = true; requestAnimationFrame(draw); } else if (!e.isIntersecting) run = false; }); }, { threshold: 0 });
+  vis.observe(hero);
+
+  /* Botão magnético */
+  [].slice.call(document.querySelectorAll('.btn-accent')).forEach(function (b) {
+    b.addEventListener('pointermove', function (ev) { if (reduce) return; var r = b.getBoundingClientRect(); b.style.transform = 'translate(' + ((ev.clientX - r.left - r.width / 2) * .2) + 'px,' + ((ev.clientY - r.top - r.height / 2) * .3) + 'px)'; });
+    b.addEventListener('pointerleave', function () { b.style.transform = ''; });
+  });
+})();
+</script>
+</body>
+</html>

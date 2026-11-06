@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=2">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 </head>
 <body>
@@ -70,17 +70,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- SOBRE -->
-  <section class="section" id="sobre">
-    <div class="container about-grid">
-      <div>
-        <p class="eyebrow">Sobre Nós</p>
-        <h2>Conheça um pouco da nossa história</h2>
-        <p>A Tutreal Soluções em Impressão 3D nasceu do compromisso com a inovação e a qualidade técnica — e do objetivo de utilizar a tecnologia para solucionar desafios reais da indústria.</p>
-        <p>Na Engenharia Industrial, aplicamos vasto know-how em modelagem CAD e engenharia reversa. Produzimos moldes e protótipos utilizando materiais de alto desempenho, garantindo a precisão dimensional, acabamento refinado e as resistências mecânica, térmica e química que o seu projeto exige.</p>
-      </div>
-      <div class="about-logo">
-        <img src="assets/img/logo-tutreal.jpg" alt="Logotipo Tutreal — soluções em impressão 3D">
-      </div>
+  <section class="section section-sobre" id="sobre">
+    <canvas class="sobre-fx" id="sobreFx" aria-hidden="true"></canvas>
+    <div class="container about-single">
+      <p class="eyebrow">Sobre Nós</p>
+      <h2>Conheça um pouco da nossa história</h2>
+      <p>A Tutreal Soluções em Impressão 3D nasceu do compromisso com a inovação e a qualidade técnica — e do objetivo de utilizar a tecnologia para solucionar desafios reais da indústria.</p>
+      <p>Na Engenharia Industrial, aplicamos vasto know-how em modelagem CAD e engenharia reversa. Produzimos moldes e protótipos utilizando materiais de alto desempenho, garantindo a precisão dimensional, acabamento refinado e as resistências mecânica, térmica e química que o seu projeto exige.</p>
     </div>
   </section>
 
@@ -142,7 +138,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <figure><img src="assets/img/peca-industrial-19.jpg" alt="Placa de molde com cavidades produzida em impressão 3D"></figure>
       </div>
       <div class="portfolio-cta">
-        <a class="btn btn-accent" href="portfolio-industrial-tutreal.pdf" target="_blank" rel="noopener">Download Portfólio Industrial completo</a>
+        <a class="btn btn-accent" href="portfolio-industrial.html">Ver portfólio industrial completo</a>
       </div>
     </div>
   </section>
@@ -216,6 +212,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.addEventListener('scroll', tryPlay, { once: true });
   })();
 </script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=2"></script>
 </body>
 </html>
